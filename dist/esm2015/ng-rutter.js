@@ -1,0 +1,12 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,uselessCode} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+export { NgRutterModule, FOR_ROOT_OPTIONS_TOKEN, provideMyServiceOptions } from './public_api';
+export { NgRutterComponent as ɵc } from './src/app/modules/ng-rutter/ng-rutter.component';
+export { NgRutterService as ɵb, NgRutterServiceOptions as ɵa } from './src/app/modules/ng-rutter/ng-rutter.service';
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmctcnV0dGVyLmpzIiwic291cmNlUm9vdCI6Im5nOi8vbmctcnV0dGVyLyIsInNvdXJjZXMiOlsibmctcnV0dGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFJQSxnRkFBYyxjQUFjLENBQUM7QUFFN0IsT0FBTyxFQUFDLGlCQUFpQixJQUFJLEVBQUUsRUFBQyxNQUFNLGlEQUFpRCxDQUFDO0FBQ3hGLE9BQU8sRUFBQyxlQUFlLElBQUksRUFBRSxFQUFDLHNCQUFzQixJQUFJLEVBQUUsRUFBQyxNQUFNLCtDQUErQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBHZW5lcmF0ZWQgYnVuZGxlIGluZGV4LiBEbyBub3QgZWRpdC5cbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL3B1YmxpY19hcGknO1xuXG5leHBvcnQge05nUnV0dGVyQ29tcG9uZW50IGFzIMm1Y30gZnJvbSAnLi9zcmMvYXBwL21vZHVsZXMvbmctcnV0dGVyL25nLXJ1dHRlci5jb21wb25lbnQnO1xuZXhwb3J0IHtOZ1J1dHRlclNlcnZpY2UgYXMgybViLE5nUnV0dGVyU2VydmljZU9wdGlvbnMgYXMgybVhfSBmcm9tICcuL3NyYy9hcHAvbW9kdWxlcy9uZy1ydXR0ZXIvbmctcnV0dGVyLnNlcnZpY2UnOyJdfQ==
