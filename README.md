@@ -1,6 +1,6 @@
-# Angular Rutter Link Port
+# Unofficial Angular Rutter Link Port
 
-Rutter Link Button for [Angular](http://angular.io); This is a simple wrapper for the javascript api that rutter provides. This is an unofficial npm package and is not endorsed or supported by Rutter.  
+Rutter Link Button for [Angular](http://angular.io); This is a simple wrapper for the javascript api that rutter provides. This is an unofficial npm package and is not endorsed or supported by Rutter. Source code is [here](https://github.com/Steven4294/ng-rutter)  
 # Installation
 ```js
 npm install ng-rutter --save
@@ -25,7 +25,9 @@ import { NgRutterModule } from 'ng-rutter';
   ],
   imports: [
     BrowserModule,
-    NgRutterModule
+    NgRutterModule.forRoot({
+      PUBLIC_API_KEY: 'MY_PUBLIC_API_KEY'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
