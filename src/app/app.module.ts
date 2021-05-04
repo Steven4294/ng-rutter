@@ -11,7 +11,7 @@ import { NgRutterModule } from './modules/ng-rutter/ng-rutter.module';
   imports: [
     BrowserModule,
     NgRutterModule.forRoot({
-      PUBLIC_API_KEY: 'sandbox_pk_d3887e18-5eb1-45c0-acb1-be795bf0d7b1'
+      PUBLIC_API_KEY: 'PUBLIC_API_KEY'
     })
   ],
   providers: [],
