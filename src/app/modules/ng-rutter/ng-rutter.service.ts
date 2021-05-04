@@ -84,6 +84,8 @@ export class NgRutterService {
 		this.observable = Observable.create((observer: Observer<any>) => {
 			this.observer = observer
 		})
+
+		this.setup()
 	}
 
 	destroy(subscriber: Subscription) {
