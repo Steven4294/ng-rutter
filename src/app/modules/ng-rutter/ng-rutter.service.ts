@@ -1,8 +1,21 @@
 // Import the core angular services.
 import { Injectable } from "@angular/core";
 import { get } from 'scriptjs';
+import { Observer, Observable, Subscription, of } from "rxjs";
+import { filter, share } from 'rxjs/operators'
 
 declare var Rutter: any;
+
+interface NgRutterEvent {
+	name: string
+	data?: any
+}
+
+export enum NgRutterEventType {
+	SUCCESS = 'SUCCESS',
+	LOAD = 'LOAD',
+	EXIT = 'EXIt',
+}
 
 @Injectable({
 	providedIn: "root"
@@ -17,17 +30,42 @@ export class NgRutterServiceOptions {
 export class NgRutterService {
  
 	public options: NgRutterServiceOptions;
+	public observable: Observable<NgRutterEvent>;
+	public observer: Observer<any>
 	url = 'https://unpkg.com/@rutter/rutter-link@latest';
+
+	open() {
+		this.loadRutter(() => {}, () => {}, () => {})
+	}
 
 	loadRutter(onSuccess, onLoad, onExit) {
 
 		var rutterInstance = Rutter.create({
 			publicKey: this.options.PUBLIC_API_KEY,
-			onSuccess: function (publicToken) {
+			onSuccess: (publicToken) => {
+				console.log(`inner success ${this.observer}`)
+
+				this.observer.next({
+
+					name: NgRutterEventType.SUCCESS,
+					data: {
+						token: publicToken
+					}
+				})
 				onSuccess(publicToken)
 			},
-			onLoad: onLoad(),
-			onExit: onExit(),
+			onLoad: () => {
+				this.observer.next({
+					name: NgRutterEventType.LOAD
+				})
+				onLoad()
+			},
+			onExit: () => {
+				this.observer.next({
+					name: NgRutterEventType.EXIT
+				})
+				onExit()
+			},
 		})
 			
 		rutterInstance.open();
@@ -40,8 +78,15 @@ export class NgRutterService {
 			});
 		})
 	}
-	
+
 	constructor( options: NgRutterServiceOptions ) {
 		this.options = options;
+		this.observable = Observable.create((observer: Observer<any>) => {
+			this.observer = observer
+		})
+	}
+
+	destroy(subscriber: Subscription) {
+		subscriber.unsubscribe();
 	}
 }

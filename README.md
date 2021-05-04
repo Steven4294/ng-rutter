@@ -74,3 +74,43 @@ export class AppComponent {
 | onLoad    | void    | Rutter alert loaded             |
 | onExit    | void    | Rutter alert exited             |
 
+### Use the `NgRutterService` to load Rutter programmatically 
+
+If you don't like the styling of the out of the box button you can trigger the Rutter dialog programmatically using the NgRutterService. This allows you to style the rutter link button as you'd like.
+
+```html
+<div (click)="openRutter()"> Custom Button </div>
+```
+
+```js
+import { Component, OnInit } from '@angular/core';
+import { NgRutterService, NgRutterEventType } from './modules/ng-rutter/ng-rutter.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+
+  constructor(private service: NgRutterService) {
+    this.service.observable.subscribe(event => {
+      if (event.name === NgRutterEventType.SUCCESS) {
+        console.log(event.data.token)
+      }
+      if (event.name === NgRutterEventType.LOAD) {
+        
+      }
+      if (event.name === NgRutterEventType.EXIT) {
+        
+      }
+    })
+  }
+
+  openRutter() {
+    this.service.open()
+  }
+}
+
+```
+
