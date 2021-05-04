@@ -34,7 +34,8 @@ export class NgRutterModule {
 					provide: NgRutterServiceOptions,
 					useFactory: provideMyServiceOptions,
 					deps: [ FOR_ROOT_OPTIONS_TOKEN ]
-				}
+				},
+				NgRutterService
 			]
 		});
 	}

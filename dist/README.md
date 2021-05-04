@@ -89,7 +89,7 @@ import { NgRutterService, NgRutterEventType } from './modules/ng-rutter/ng-rutte
 export class AppComponent {
 
   constructor(private rutterService: NgRutterService) {
-    this.service.observable.subscribe(event => {
+    this.rutterService.observable.subscribe(event => {
       if (event.name === NgRutterEventType.SUCCESS) {
         console.log(event.data.token)
       }
