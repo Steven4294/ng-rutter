@@ -83,17 +83,12 @@ If you don't like the styling of the out of the box button you can trigger the R
 ```
 
 ```js
-import { Component, OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { NgRutterService, NgRutterEventType } from './modules/ng-rutter/ng-rutter.service';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
 export class AppComponent {
 
-  constructor(private service: NgRutterService) {
+  constructor(private rutterService: NgRutterService) {
     this.service.observable.subscribe(event => {
       if (event.name === NgRutterEventType.SUCCESS) {
         console.log(event.data.token)
@@ -108,7 +103,7 @@ export class AppComponent {
   }
 
   openRutter() {
-    this.service.open()
+    this.rutterService.open()
   }
 }
 
