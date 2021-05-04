@@ -6,18 +6,18 @@ import { NgRutterServiceOptions, NgRutterService } from './ng-rutter.service';
 
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  providers: [
-	NgRutterService
-],
-  declarations: [
-    NgRutterComponent
-  ],
-  exports: [
-	NgRutterComponent,
-  ]
+  	imports: [
+    	CommonModule
+  	],
+  	providers: [
+		NgRutterService
+	],
+	declarations: [
+		NgRutterComponent
+	],
+	exports: [
+		NgRutterComponent,
+	]
 })
 export class NgRutterModule {
 

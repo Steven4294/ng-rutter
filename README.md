@@ -84,7 +84,7 @@ If you don't like the styling of the out of the box button you can trigger the R
 
 ```js
 import { OnInit } from '@angular/core';
-import { NgRutterService, NgRutterEventType } from './modules/ng-rutter/ng-rutter.service';
+import { NgRutterService, NgRutterEventType } from 'ng-rutter';
 
 export class AppComponent {
 
