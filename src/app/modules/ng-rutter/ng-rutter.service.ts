@@ -6,7 +6,7 @@ import { filter, share } from 'rxjs/operators'
 
 declare var Rutter: any;
 
-interface NgRutterEvent {
+export interface NgRutterEvent {
 	name: string
 	data?: any
 }
@@ -14,7 +14,7 @@ interface NgRutterEvent {
 export enum NgRutterEventType {
 	SUCCESS = 'SUCCESS',
 	LOAD = 'LOAD',
-	EXIT = 'EXIt',
+	EXIT = 'EXIT',
 }
 
 @Injectable({
